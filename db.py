@@ -41,10 +41,14 @@ def createTable(dbName, sqlFileName):
     # close the database connection
     db.close()
 
-#Function
+#Function that enables reading data
 def selectQuery(database,query):
     return database.cursor.execute(query).fetchall()
 
-
+#Function that enables functions to maninpulate data
+def dataQuery(database, query):
+    database.cursor.execute(query)
+    return True
+    
 def commitChanges(database):
     database.conn.commit()
