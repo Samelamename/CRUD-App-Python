@@ -3,20 +3,25 @@
 
 # It will run commands from the service file, which in turn uses the DB file to 
 # query and create data and will return the data back to the user
-
 from service import *
+# print(
+#     """
+#     Welcome to the QA Cafe, what would you like to do? 
 
-print(
-    """
-    Welcome to the QA Cafe, what would you like to do? 
+#     1. Create an order
+#     2. Read an order
+#     3. Read all Orders
+#     4. Update an order
+#     5. Delete an order
+#     6. Delete all orders
+#     """
+# )
+db = initializeDb("coffeeOrder")
+# Call the readAllData function with the database name and table name
+print(readAllData(db, "orders"))
 
-    1. Create an order
-    2. Read an order
-    3. Read all Orders
-    4. Update an order
-    5. Delete an order
-    6. Delete all orders
-    """
-)
+updateOrderNameId(db, 2, "Ted Lasso")
 
-print(service.getAll())
+print(readAllData(db, "orders"))
+
+db.close()
