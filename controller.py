@@ -6,7 +6,7 @@
 from service import *
 # print(
 #     """
-#     Welcome to the QA Cafe, what would you like to do? 
+#     Welcome to the Olaad Cafe, what would you like to do? 
 
 #     1. Create an order
 #     2. Read an order
@@ -18,10 +18,15 @@ from service import *
 # )
 db = initializeDb("coffeeOrder")
 # Call the readAllData function with the database name and table name
+# createTable(db, "coffeeOrder.sql")
+
+
 print(readAllData(db, "orders"))
 
-updateOrderNameId(db, 2, "Ted Lasso")
+# updateOrderNameId(db, 2, "Ted Lasso")
 
-print(readAllData(db, "orders"))
+# createOrder(db)
 
+# print(readAllData(db, "orders"))
+commitChanges(db)
 db.close()
