@@ -15,9 +15,6 @@ def createTable(db, sqlFileName):
 
 #Reads All data in table specified. 
 def readAllData(db, tableName):
-    # Create a database instance
-    # Create a cursor to interact with the database
-    # cursor = conn.cursor()
     # Execute the SELECT query
     query = f"SELECT * FROM {tableName}"
     result = selectQuery(db, query)
@@ -26,9 +23,9 @@ def readAllData(db, tableName):
 
 
 #Deletes data from table by ID
-def deleteOrderId(db, id):
-    query = f"DELETE FROM orders where order_id = {id}"
-
+def deleteOrderId(db):
+    orderID = int(input("What is the ID of the order you would like to delete? "))
+    query = f"DELETE FROM orders where order_id = {orderID}"
     dataQuery(db, query)
     return True
 
