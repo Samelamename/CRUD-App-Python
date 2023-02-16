@@ -33,15 +33,7 @@ def initializeDb(dbName):
     db = database(dbName)
     return db
 
-def createTable(db, sqlFileName):
-    # create a tableCreator instance
-    creator = tableCreator(db, sqlFileName)
-    # create the tables
-    creator.create()
-    # commit the changes
-    db.conn.commit()
-    # close the database connection
-    db.close()
+
 
 #Function that enables reading data
 def selectQuery(db,query):
